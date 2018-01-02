@@ -16,6 +16,7 @@ This template has been cut out of my existing project which is very much a WIP, 
 
 ## A note about initializing entities from GameObjects in the scene
 This template uses an 'older' approach of mine: generated MonoBehaviours for each component.
+
 The most recent and much more convenient one uses Odin Inspector asset and is described [here](https://github.com/sschmid/Entitas-CSharp/issues/515). 
 The ```ViewableEntityInitializer``` MonoBehaviour and ```InitSceneEntitiesSystem``` system that works with Odin are included in this project and have and \*Odin suffix in their file names.
 
