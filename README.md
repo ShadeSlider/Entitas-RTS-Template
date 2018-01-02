@@ -2,6 +2,7 @@
 ## These template includes:
 - Basic config management (general, input, hotkeys)
 - Very basic writing/reading of config files (using JSON.net)
+- Custom Code Generator example (used for initializing entities from GameObjects)
 - Universal user input processing (mouse and keyboard events)
 - Basic Tick systems and game pausing mechanics
 - Basic tweening integration (using DOTween)
@@ -9,6 +10,11 @@
 - Initializing entities from GameObjects in the scene
 - Click and drag selection of selectable GameObjects
 - Right click navigation and pathfinding (using A* Pathfinding Project)
+
+## A note about initializing enitities from GameObjects in the scene
+This template uses an 'older' approach of mine: generated MonoBehaviours for each component.
+A recent and much more convinient one uses Odin Inspector asset and is described [here](https://github.com/sschmid/Entitas-CSharp/issues/515). 
+The ```ViewableEntityInitializer``` MonoBehaviour and ```InitSceneEntitiesSystem``` system that works with Odin are included in this project and have and \*Odin suffix in thier file names.
 
 ## Dependencies
 - [JSON.net](https://www.newtonsoft.com/json)
