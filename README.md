@@ -11,6 +11,9 @@
 - Click and drag selection of selectable GameObjects
 - Right click navigation and pathfinding (using A* Pathfinding Project)
 
+## Disclaimer 
+This template has been cut out of my existing project which is very much a WIP, so it is by no means a finished and polished product. I do hope, though, that it might be of help for those who are just starting out with ECS and Entitas.
+
 ## A note about initializing enitities from GameObjects in the scene
 This template uses an 'older' approach of mine: generated MonoBehaviours for each component.
 A recent and much more convinient one uses Odin Inspector asset and is described [here](https://github.com/sschmid/Entitas-CSharp/issues/515). 
