@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8daa396e7e494c4db63c39d3e703f7eb, type: 3}
+  m_Name: GameConfig
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  uiConfig: {fileID: 11400000, guid: bb7e5dad9502bc94496a5152e2eb63a3, type: 2}
+  inputConfig: {fileID: 11400000, guid: 98c6a9dd7cc1ae74b845afb968d537d9, type: 2}
+  playerConfig:
+  - {fileID: 11400000, guid: 2f8fb3d979878c94d8f07248e06671d7, type: 2}
+  - {fileID: 11400000, guid: aa3e9dbe3061e124d9bc2e8e94a40316, type: 2}
+  controls: {fileID: 11400000, guid: db56a52bb94b64d41a92b5e07b233b6e, type: 2}
+  hotkeys: {fileID: 11400000, guid: 40498702f6e44bb4bb6037d10f34b37a, type: 2}
+  appDataPath: 
+  configsDirName: configs
+  controlsConfigFilename: controls.cfg
+  hotkeysConfigFilename: hotkeys.cfg

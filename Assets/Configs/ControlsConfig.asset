@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ea4de9e7b34bfeb27462d1aa7830c3, type: 3}
+  m_Name: ControlsConfig
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: cameraMoveForward
+      Entry: 7
+      Data: Hotkey, Assembly-CSharp
+    - Name: keyCode
+      Entry: 3
+      Data: 119
+    - Name: isShift
+      Entry: 5
+      Data: false
+    - Name: isControl
+      Entry: 5
+      Data: false
+    - Name: isAlt
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cameraMoveBackward
+      Entry: 7
+      Data: Hotkey, Assembly-CSharp
+    - Name: keyCode
+      Entry: 3
+      Data: 115
+    - Name: isShift
+      Entry: 5
+      Data: false
+    - Name: isControl
+      Entry: 5
+      Data: false
+    - Name: isAlt
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cameraMoveLeft
+      Entry: 7
+      Data: Hotkey, Assembly-CSharp
+    - Name: keyCode
+      Entry: 3
+      Data: 97
+    - Name: isShift
+      Entry: 5
+      Data: false
+    - Name: isControl
+      Entry: 5
+      Data: false
+    - Name: isAlt
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cameraMoveRight
+      Entry: 7
+      Data: Hotkey, Assembly-CSharp
+    - Name: keyCode
+      Entry: 3
+      Data: 100
+    - Name: isShift
+      Entry: 5
+      Data: false
+    - Name: isControl
+      Entry: 5
+      Data: false
+    - Name: isAlt
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cameraRotateRight
+      Entry: 7
+      Data: Hotkey, Assembly-CSharp
+    - Name: keyCode
+      Entry: 3
+      Data: 101
+    - Name: isShift
+      Entry: 5
+      Data: false
+    - Name: isControl
+      Entry: 5
+      Data: false
+    - Name: isAlt
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: cameraRotateLeft
+      Entry: 7
+      Data: Hotkey, Assembly-CSharp
+    - Name: keyCode
+      Entry: 3
+      Data: 113
+    - Name: isShift
+      Entry: 5
+      Data: false
+    - Name: isControl
+      Entry: 5
+      Data: false
+    - Name: isAlt
+      Entry: 5
+      Data: false
+    - Name: 
+      Entry: 8
+      Data: 
+  cameraMinHeight: 20
+  cameraMaxHeight: 200
+  cameraMovementSpeed: 41
+  cameraRotationSpeed: 35
+  cameraZoomSpeed: 47
