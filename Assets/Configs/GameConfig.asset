@@ -11,15 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8daa396e7e494c4db63c39d3e703f7eb, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
   uiConfig: {fileID: 11400000, guid: bb7e5dad9502bc94496a5152e2eb63a3, type: 2}
   inputConfig: {fileID: 11400000, guid: 98c6a9dd7cc1ae74b845afb968d537d9, type: 2}
   playerConfig:

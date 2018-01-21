@@ -1,11 +1,12 @@
 ﻿using Entitas;
 using Entitas.CodeGeneration.Attributes;
+using UnityEngine;
 
 [Input]
 [Unique]
 public class DragSelectionDataComponent : IComponent
 {
-    public ScreenPointComponent mouseDownScreenPointComponent;
-    public ScreenPointComponent mouseHeldScreenPointComponent;
-    public ScreenPointComponent mouseUpScreenPointComponent;
+    public Vector2 mouseDownScreenPoint;
+    public Vector2 mouseHeldScreenPoint;
+    public Vector2 mouseUpScreenPoint;
 }

@@ -12,22 +12,22 @@ public partial class InputContext {
     public DragSelectionDataComponent dragSelectionData { get { return dragSelectionDataEntity.dragSelectionData; } }
     public bool hasDragSelectionData { get { return dragSelectionDataEntity != null; } }
 
-    public InputEntity SetDragSelectionData(ScreenPointComponent newMouseDownScreenPointComponent, ScreenPointComponent newMouseHeldScreenPointComponent, ScreenPointComponent newMouseUpScreenPointComponent) {
+    public InputEntity SetDragSelectionData(UnityEngine.Vector2 newMouseDownScreenPoint, UnityEngine.Vector2 newMouseHeldScreenPoint, UnityEngine.Vector2 newMouseUpScreenPoint) {
         if (hasDragSelectionData) {
             throw new Entitas.EntitasException("Could not set DragSelectionData!\n" + this + " already has an entity with DragSelectionDataComponent!",
                 "You should check if the context already has a dragSelectionDataEntity before setting it or use context.ReplaceDragSelectionData().");
         }
         var entity = CreateEntity();
-        entity.AddDragSelectionData(newMouseDownScreenPointComponent, newMouseHeldScreenPointComponent, newMouseUpScreenPointComponent);
+        entity.AddDragSelectionData(newMouseDownScreenPoint, newMouseHeldScreenPoint, newMouseUpScreenPoint);
         return entity;
     }
 
-    public void ReplaceDragSelectionData(ScreenPointComponent newMouseDownScreenPointComponent, ScreenPointComponent newMouseHeldScreenPointComponent, ScreenPointComponent newMouseUpScreenPointComponent) {
+    public void ReplaceDragSelectionData(UnityEngine.Vector2 newMouseDownScreenPoint, UnityEngine.Vector2 newMouseHeldScreenPoint, UnityEngine.Vector2 newMouseUpScreenPoint) {
         var entity = dragSelectionDataEntity;
         if (entity == null) {
-            entity = SetDragSelectionData(newMouseDownScreenPointComponent, newMouseHeldScreenPointComponent, newMouseUpScreenPointComponent);
+            entity = SetDragSelectionData(newMouseDownScreenPoint, newMouseHeldScreenPoint, newMouseUpScreenPoint);
         } else {
-            entity.ReplaceDragSelectionData(newMouseDownScreenPointComponent, newMouseHeldScreenPointComponent, newMouseUpScreenPointComponent);
+            entity.ReplaceDragSelectionData(newMouseDownScreenPoint, newMouseHeldScreenPoint, newMouseUpScreenPoint);
         }
     }
 
@@ -49,21 +49,21 @@ public partial class InputEntity {
     public DragSelectionDataComponent dragSelectionData { get { return (DragSelectionDataComponent)GetComponent(InputComponentsLookup.DragSelectionData); } }
     public bool hasDragSelectionData { get { return HasComponent(InputComponentsLookup.DragSelectionData); } }
 
-    public void AddDragSelectionData(ScreenPointComponent newMouseDownScreenPointComponent, ScreenPointComponent newMouseHeldScreenPointComponent, ScreenPointComponent newMouseUpScreenPointComponent) {
+    public void AddDragSelectionData(UnityEngine.Vector2 newMouseDownScreenPoint, UnityEngine.Vector2 newMouseHeldScreenPoint, UnityEngine.Vector2 newMouseUpScreenPoint) {
         var index = InputComponentsLookup.DragSelectionData;
         var component = CreateComponent<DragSelectionDataComponent>(index);
-        component.mouseDownScreenPointComponent = newMouseDownScreenPointComponent;
-        component.mouseHeldScreenPointComponent = newMouseHeldScreenPointComponent;
-        component.mouseUpScreenPointComponent = newMouseUpScreenPointComponent;
+        component.mouseDownScreenPoint = newMouseDownScreenPoint;
+        component.mouseHeldScreenPoint = newMouseHeldScreenPoint;
+        component.mouseUpScreenPoint = newMouseUpScreenPoint;
         AddComponent(index, component);
     }
 
-    public void ReplaceDragSelectionData(ScreenPointComponent newMouseDownScreenPointComponent, ScreenPointComponent newMouseHeldScreenPointComponent, ScreenPointComponent newMouseUpScreenPointComponent) {
+    public void ReplaceDragSelectionData(UnityEngine.Vector2 newMouseDownScreenPoint, UnityEngine.Vector2 newMouseHeldScreenPoint, UnityEngine.Vector2 newMouseUpScreenPoint) {
         var index = InputComponentsLookup.DragSelectionData;
         var component = CreateComponent<DragSelectionDataComponent>(index);
-        component.mouseDownScreenPointComponent = newMouseDownScreenPointComponent;
-        component.mouseHeldScreenPointComponent = newMouseHeldScreenPointComponent;
-        component.mouseUpScreenPointComponent = newMouseUpScreenPointComponent;
+        component.mouseDownScreenPoint = newMouseDownScreenPoint;
+        component.mouseHeldScreenPoint = newMouseHeldScreenPoint;
+        component.mouseUpScreenPoint = newMouseUpScreenPoint;
         ReplaceComponent(index, component);
     }
 

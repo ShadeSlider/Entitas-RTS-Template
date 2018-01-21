@@ -28,7 +28,7 @@ namespace Sources.Systems.ExternalInput
         public void Initialize()
         {
             _gameConfig = _contexts.meta.gameConfig.value;
-            _context.SetDragSelectionData(new ScreenPointComponent(), new ScreenPointComponent(), new ScreenPointComponent());
+            _context.SetDragSelectionData(Vector2.zero, Vector2.zero, Vector2.zero);
         }
 
         protected override ICollector<InputEntity> GetTrigger(IContext<InputEntity> context) {
@@ -53,13 +53,13 @@ namespace Sources.Systems.ExternalInput
             {
                 if (entity.isLeftMouseButtonDown)
                 {
-                    dragSelectionDataEntity.dragSelectionData.mouseDownScreenPointComponent.value = entity.screenPoint.value;
+                    dragSelectionDataEntity.dragSelectionData.mouseDownScreenPoint = entity.screenPoint.value;
                 }
                 else if (entity.isLeftMouseButtonHeld) {
-                    dragSelectionDataEntity.dragSelectionData.mouseHeldScreenPointComponent.value = entity.screenPoint.value;
+                    dragSelectionDataEntity.dragSelectionData.mouseHeldScreenPoint = entity.screenPoint.value;
                 }
                 else if (entity.isLeftMouseButtonUp) {
-                    dragSelectionDataEntity.dragSelectionData.mouseUpScreenPointComponent.value = entity.screenPoint.value;
+                    dragSelectionDataEntity.dragSelectionData.mouseUpScreenPoint = entity.screenPoint.value;
                 }
             }
 
@@ -68,8 +68,8 @@ namespace Sources.Systems.ExternalInput
             
             DragSelectionDataComponent dragSelectionDataComponent = dragSelectionDataEntity.dragSelectionData;
             if (
-                dragSelectionDataComponent.mouseUpScreenPointComponent.value == Vector2.zero 
-                || ((dragSelectionDataComponent.mouseHeldScreenPointComponent.value - dragSelectionDataComponent.mouseDownScreenPointComponent.value).magnitude < _gameConfig.inputConfig.dragSelectionDeadZone) 
+                dragSelectionDataComponent.mouseUpScreenPoint == Vector2.zero 
+                || ((dragSelectionDataComponent.mouseHeldScreenPoint - dragSelectionDataComponent.mouseDownScreenPoint).magnitude < _gameConfig.inputConfig.dragSelectionDeadZone) 
             )
             {
                 return;
@@ -86,8 +86,8 @@ namespace Sources.Systems.ExternalInput
                 }            
             }
 
-            Vector2 mouseDownViewport = Camera.main.ScreenToViewportPoint (dragSelectionDataComponent.mouseDownScreenPointComponent.value);
-            Vector2 mouseUpViewport = Camera.main.ScreenToViewportPoint (dragSelectionDataComponent.mouseUpScreenPointComponent.value);
+            Vector2 mouseDownViewport = Camera.main.ScreenToViewportPoint (dragSelectionDataComponent.mouseDownScreenPoint);
+            Vector2 mouseUpViewport = Camera.main.ScreenToViewportPoint (dragSelectionDataComponent.mouseUpScreenPoint);
             Rect selectionRect = new Rect (mouseDownViewport.x, mouseDownViewport.y, mouseUpViewport.x - mouseDownViewport.x, mouseUpViewport.y - mouseDownViewport.y);
 
             GameEntity[] selectableEntities = _contexts.game.GetGroup(GameMatcher.Selectable).GetEntities();

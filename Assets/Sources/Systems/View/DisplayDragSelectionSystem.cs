@@ -21,7 +21,7 @@ namespace Sources.Systems.View
 
         protected override bool Filter(InputEntity entity)
         {
-            return entity.dragSelectionData.mouseHeldScreenPointComponent.value != Vector2.zero;
+            return entity.dragSelectionData.mouseHeldScreenPoint != Vector2.zero;
         }
 
         protected override void Execute(List<InputEntity> entities)
@@ -31,15 +31,15 @@ namespace Sources.Systems.View
 
             RectTransform dragSelectionImageTransform = (RectTransform)dragSelectionImageEntity.view.gameObject.transform;
         
-            Vector2 selectionCenter = (dragSelectionDataComponent.mouseDownScreenPointComponent.value + dragSelectionDataComponent.mouseHeldScreenPointComponent.value) / 2f;
-            float selectionWidth =  Mathf.Abs (dragSelectionDataComponent.mouseHeldScreenPointComponent.value.x - dragSelectionDataComponent.mouseDownScreenPointComponent.value.x);
-            float selectionHeight =  Mathf.Abs (dragSelectionDataComponent.mouseHeldScreenPointComponent.value.y - dragSelectionDataComponent.mouseDownScreenPointComponent.value.y);
+            Vector2 selectionCenter = (dragSelectionDataComponent.mouseDownScreenPoint + dragSelectionDataComponent.mouseHeldScreenPoint) / 2f;
+            float selectionWidth =  Mathf.Abs (dragSelectionDataComponent.mouseHeldScreenPoint.x - dragSelectionDataComponent.mouseDownScreenPoint.x);
+            float selectionHeight =  Mathf.Abs (dragSelectionDataComponent.mouseHeldScreenPoint.y - dragSelectionDataComponent.mouseDownScreenPoint.y);
 
             dragSelectionImageTransform.gameObject.SetActive(true);
             dragSelectionImageTransform.position = selectionCenter;
             dragSelectionImageTransform.sizeDelta = new Vector2(selectionWidth, selectionHeight);
         
-            if (dragSelectionDataComponent.mouseUpScreenPointComponent.value != Vector2.zero)
+            if (dragSelectionDataComponent.mouseUpScreenPoint != Vector2.zero)
             {
                 dragSelectionImageTransform.gameObject.SetActive(false);
             }
@@ -48,9 +48,9 @@ namespace Sources.Systems.View
         public void Cleanup()
         {
             DragSelectionDataComponent dragSelectionDataComponent = _context.dragSelectionDataEntity.dragSelectionData;
-            if (dragSelectionDataComponent.mouseUpScreenPointComponent.value != Vector2.zero)
+            if (dragSelectionDataComponent.mouseUpScreenPoint != Vector2.zero)
             {
-                _context.ReplaceDragSelectionData(new ScreenPointComponent(), new ScreenPointComponent(), new ScreenPointComponent());
+                _context.ReplaceDragSelectionData(Vector2.zero, Vector2.zero, Vector2.zero);
             }
         }
     }

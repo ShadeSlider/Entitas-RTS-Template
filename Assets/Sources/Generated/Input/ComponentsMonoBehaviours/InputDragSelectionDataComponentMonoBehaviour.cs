@@ -14,9 +14,9 @@ namespace Entitas.Generated.Input.ComponentsMonoBehaviours {
 
     public class InputDragSelectionDataComponentMonoBehaviour : BaseComponentMonoBehaviour {
     
-        public ScreenPointComponent mouseDownScreenPointComponent;
-	public ScreenPointComponent mouseHeldScreenPointComponent;
-	public ScreenPointComponent mouseUpScreenPointComponent;
+        public UnityEngine.Vector2 mouseDownScreenPoint;
+	public UnityEngine.Vector2 mouseHeldScreenPoint;
+	public UnityEngine.Vector2 mouseUpScreenPoint;
     
         public override IComponent Component
         {
@@ -24,9 +24,9 @@ namespace Entitas.Generated.Input.ComponentsMonoBehaviours {
             { 
                 return new DragSelectionDataComponent
                 {
-                    mouseDownScreenPointComponent = mouseDownScreenPointComponent,
-				mouseHeldScreenPointComponent = mouseHeldScreenPointComponent,
-				mouseUpScreenPointComponent = mouseUpScreenPointComponent
+                    mouseDownScreenPoint = mouseDownScreenPoint,
+				mouseHeldScreenPoint = mouseHeldScreenPoint,
+				mouseUpScreenPoint = mouseUpScreenPoint
                 }; 
             }
         }
